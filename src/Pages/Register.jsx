@@ -4,6 +4,8 @@ import { toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { sendEmailVerification, updateProfile } from 'firebase/auth';
+import { auth } from '../Firebase/Firebase';
 
 const Register = () => {
     const [show,setShow]=useState(false)
@@ -11,13 +13,13 @@ const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault()
         console.log("clicked")
-        const name = e.target.name?.value;
-        const photo = e.target.photo?.value;
+        const displayName = e.target.name?.value;
+        const photoURL = e.target.photo?.value;
         const email = e.target.email?.value;
         const password = e.target.password?.value;
-        console.log({ name, photo, email, password })
+        console.log({ displayName, photoURL, email, password })
         // Name validation
-        if (name.length < 5) {
+        if (displayName.length < 5) {
             toast.error('Name at lest 5 chacter')
             return;
         }
@@ -35,22 +37,79 @@ const Register = () => {
             toast.error('Password must have at least one lowercase letter.')
             return;
         }
+createUserWithEmailAndPasswordfunc(email, password)
+  .then((result) => {
+    const user = result.user;
 
-        createUserWithEmailAndPasswordfunc(email, password)
-            .then(result => {
-                console.log(result.user)
-                toast.success('Succesfully login')
+    // ✅ Step 1: Update profile
+    updateProfile(user, {
+      displayName: displayName, 
+      photoURL: photoURL,   
+    })
+      .then(() => {
+        // ✅ Step 2: Send verification email
+        sendEmailVerification(user)
+          .then(() => {
+            toast.success('Check your email and validate your account!');
+          })
+          .catch((error) => {
+            console.log("Verification Error:", error.message);
+            toast.error(error.message);
+          });
+      })
+      .catch((error) => {
+        console.log("Profile Update Error:", error.message);
+        toast.error(error.message);
+      });
+  })
+  .catch((error) => {
+    console.log("Register Error:", error.code);
+    if (error.code === "auth/email-already-in-use") {
+      toast.error("User already exists in the database");
+    } else {
+      toast.error(error.message);
+    }
+  });
 
-            })
-            .catch(error => {
-                console.log(error.code)
+        // createUserWithEmailAndPasswordfunc(email, password)
+        //     .then((result) => {
+        //         // updateprofile
+        //         updateProfile(result.user,{
+        //             displayName,
+        //             photoURL,
+        //         })
+        //         .then(()=>{
+        //             console.log(result)
+        //             // emailverification
+        //             sendEmailVerification(result.user)
+        //             .then((result)=>{
+        //                   console.log(result.user)
+        //             toast.success('check your email and validate your account')
+
+        //             })
+        //             .catch(error=>{
+        //                 console.log(error.message)
+        //                 toast.error(error.code)
+        //             })
+                  
+        //         })
+        //         .then(error=>{
+        //             console.log(error.code)
+        //             toast.error(error.message)
+        //         })
+               
+
+        //     })
+        //     .catch(error => {
+        //         console.log(error.code)
                 
-                if(error.code=='auth/email-already-in-use'){
-                    toast.error('user already exist in database')
-                }
-            })
+        //         if(error.code=='auth/email-already-in-use'){
+        //             toast.error('user already exist in database')
+        //         }
+        //     })
 
     }
+
     return (
         <div className="card bg-base-100 w-full m-auto mt-20 max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
@@ -76,7 +135,6 @@ const Register = () => {
                          </span>
                        </div>
 
-                        <div><a className="link link-hover">Forgot password?</a></div>
                         <button type='Submit' className="btn btn-neutral mt-4">Login</button>
                     </fieldset>
                     <p>Already have an account? <Link to='/login'>Login</Link> </p>
