@@ -1,0 +1,26 @@
+[
+  {
+    "id": "slide1",
+    "image": "https://i.ibb.co.com/0ptp6V1L/97b4813e1854faadff4aff451c50204f.jpg",
+    "title": "Welcome to Our Collection",
+    "description": "Discover amazing products curated just for you"
+  },
+  {
+    "id": "slide2",
+    "image": "https://i.ibb.co.com/cK2qGfkZ/ae8888f91c10d44d8a6714c6632c441b.jpg",
+    "title": "New Arrivals",
+    "description": "Check out our latest additions"
+  },
+  {
+    "id": "slide3",
+    "image": "https://i.ibb.co.com/pjCCNWmt/e1cca4e69575c9d2046723aa95e769eb.jpg",
+    "title": "Special Offers",
+    "description": "Limited time deals"
+  },
+  {
+    "id": "slide4",
+    "image": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "title": "Premium Quality",
+    "description": "Experience excellence"
+  }
+]

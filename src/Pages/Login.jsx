@@ -3,19 +3,22 @@ import { Link } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { sendPasswordResetEmail, signOut } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from '.././Firebase/Firebase';
+import { GoogleAuthProvider } from "firebase/auth";
+
+const googleprovider = new GoogleAuthProvider();
 const Login = () => {
 
     const [show, setShow] = useState(false)
-    const { signInWithEmailAndPasswordfunc, signInWithPopupfunc, user, setUser } = useContext(AuthContext)
+    const { user, setUser } = useContext(AuthContext)
     const emailRef=useRef(null)
     const handleSignIn = (e) => {
         e.preventDefault()
         const email = e.target.email?.value;
         const password = e.target.password?.value;
         console.log({ email, password })
-        signInWithEmailAndPasswordfunc(email, password)
+        signInWithEmailAndPassword(auth,email, password)
             .then(result => {
                 console.log(result.user)
                if(!result.user?.emailVerified){
@@ -33,18 +36,18 @@ const Login = () => {
             })
 
     }
-    const handleGoogleSignIn = () => {
+    const handleGoogleSignIn = (e) => {
+        e.preventDefault()
         console.log("google clicked")
-        signInWithPopupfunc()
-            .then(result => {
-                setUser(result.user)
-                console.log(result.user)
-                toast.success("successfully sign in")
-            })
-            .catch(error => {
-                console.log(error.message)
-                toast.error(error.message)
-            })
+        signInWithPopup(auth,googleprovider)
+        .then((result)=>{
+            console.log(result.user)
+            toast.success("Succesfully Login")
+        })
+        .catch(error=>{
+            console.log(error.message)
+            toast.error(error.message)
+        })
     }
     const handleSignOut = () => {
         signOut(auth)

@@ -71,43 +71,7 @@ createUserWithEmailAndPasswordfunc(email, password)
     }
   });
 
-        // createUserWithEmailAndPasswordfunc(email, password)
-        //     .then((result) => {
-        //         // updateprofile
-        //         updateProfile(result.user,{
-        //             displayName,
-        //             photoURL,
-        //         })
-        //         .then(()=>{
-        //             console.log(result)
-        //             // emailverification
-        //             sendEmailVerification(result.user)
-        //             .then((result)=>{
-        //                   console.log(result.user)
-        //             toast.success('check your email and validate your account')
-
-        //             })
-        //             .catch(error=>{
-        //                 console.log(error.message)
-        //                 toast.error(error.code)
-        //             })
-                  
-        //         })
-        //         .then(error=>{
-        //             console.log(error.code)
-        //             toast.error(error.message)
-        //         })
-               
-
-        //     })
-        //     .catch(error => {
-        //         console.log(error.code)
-                
-        //         if(error.code=='auth/email-already-in-use'){
-        //             toast.error('user already exist in database')
-        //         }
-        //     })
-
+       
     }
 
     return (

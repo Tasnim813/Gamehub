@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router";
 
 import HomeLayout from "../Layout/HomeLayout";
-import Home from "../Pages/Home";
+
 import About from "../Pages/About";
 import Game from "../Pages/Game";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Banner from "../Pages/Banner";
+import ProductDetails from "../Pages/ProductDetails";
 
 export const router=createBrowserRouter([
     {
@@ -14,7 +16,7 @@ export const router=createBrowserRouter([
         children:[
             {
                 index:true,
-                Component:Home
+                Component:Banner
             },
             {
               path:'/about',
@@ -31,6 +33,11 @@ export const router=createBrowserRouter([
             {
                 path:'/register',
                 Component:Register
+            },
+            {
+                path:'/product/:id',
+                Component:ProductDetails,
+                loader:()=> fetch('/Games.json')
             }
         ]
     }

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "title": "Player Unknown's Battlegrounds (PUBG)",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  },
+  {
+    "id": "2",
+    "title": "Valorant",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "FPS",
+    "downloadLink": "https://playvalorant.com/",
+    "description": "Valorant is a tactical 5v5 shooter blending precise gunplay and unique agent abilities for high-stakes competition.",
+    "ratings": "4.7",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "3",
+    "title": "Minecraft",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/",
+    "description": "Minecraft is a sandbox adventure game about placing blocks, exploring, crafting, and surviving in infinite worlds.",
+    "ratings": "4.8",
+    "developer": "Mojang Studios"
+  },
+  {
+    "id": "4",
+    "title": "Genshin Impact",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "RPG",
+    "downloadLink": "https://genshin.hoyoverse.com/",
+    "description": "Genshin Impact is an open-world action RPG where players explore the magical world of Teyvat and harness elemental powers.",
+    "ratings": "4.6",
+    "developer": "HoYoverse"
+  },
+  {
+    "id": "5",
+    "title": "Among Us",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "Party",
+    "downloadLink": "https://innersloth.com/gameAmongUs.php",
+    "description": "Among Us is a multiplayer party game where players work together on a spaceship—unless one of them is an impostor!",
+    "ratings": "4.4",
+    "developer": "Innersloth"
+  },
+  {
+    "id": "6",
+    "title": "Apex Legends",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.ea.com/games/apex-legends",
+    "description": "Apex Legends is a hero shooter where legendary characters with unique abilities team up and battle for glory and fame.",
+    "ratings": "4.7",
+    "developer": "Respawn Entertainment"
+  },
+  {
+    "id": "7",
+    "title": "Hollow Knight",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "Adventure",
+    "downloadLink": "https://www.hollowknight.com/",
+    "description": "Hollow Knight is a beautifully hand-drawn action adventure through a vast world of insects and heroes.",
+    "ratings": "4.9",
+    "developer": "Team Cherry"
+  },
+  {
+    "id": "8",
+    "title": "The Witcher 3: Wild Hunt",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "RPG",
+    "downloadLink": "https://thewitcher.com/en/witcher3",
+    "description": "An open-world RPG following monster hunter Geralt of Rivia on his quest across war-torn lands to find his adopted daughter.",
+    "ratings": "4.9",
+    "developer": "CD Projekt Red"
+  },
+  {
+    "id": "9",
+    "title": "Stardew Valley",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "Simulation",
+    "downloadLink": "https://www.stardewvalley.net/",
+    "description": "Stardew Valley lets you build the farm of your dreams—grow crops, raise animals, and become part of the community.",
+    "ratings": "4.8",
+    "developer": "ConcernedApe"
+  },
+  {
+    "id": "10",
+    "title": "Fortnite",
+    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.epicgames.com/fortnite/",
+    "description": "Fortnite is an ever-evolving battle royale where you build, fight, and outlast 99 others in creative chaos.",
+    "ratings": "4.5",
+    "developer": "Epic Games"
+  }
+]
