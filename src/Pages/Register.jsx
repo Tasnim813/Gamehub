@@ -81,9 +81,12 @@ const Register = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="card bg-gray-800 w-full max-w-sm shadow-2xl rounded-2xl"
+                className="card  w-full max-w-sm shadow-2xl "
             >
-                <div className="card-body space-y-4">
+                
+                <div>
+                    <h1 className='text-white text-4xl mb-5 font-bold text-center'>Register Now!!</h1>
+                    <div className="card-body rounded-2xl bg-gray-800 space-y-4">
                     <h2 className="text-2xl font-bold text-cyan-400 text-center mb-2">Create Account</h2>
                     <form onSubmit={handleRegister} className="space-y-4">
                         {/* Name */}
@@ -131,6 +134,7 @@ const Register = () => {
                     <p className="text-center text-gray-300 text-sm">
                         Already have an account? <Link className="text-cyan-400 hover:text-cyan-300" to='/login'>Login</Link>
                     </p>
+                </div>
                 </div>
             </motion.div>
         </div>

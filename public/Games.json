@@ -12,7 +12,7 @@
   {
     "id": "2",
     "title": "Valorant",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "coverPhoto": "https://i.ibb.co.com/9ktBYxcp/7fe2762045cd672f6f7ed248ca4c407c.jpg",
     "category": "FPS",
     "downloadLink": "https://playvalorant.com/",
     "description": "Valorant is a tactical 5v5 shooter blending precise gunplay and unique agent abilities for high-stakes competition.",
@@ -22,7 +22,7 @@
   {
     "id": "3",
     "title": "Minecraft",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "coverPhoto": "https://i.ibb.co.com/hxQcndyP/777ef918f35a984afc65339d7e08c33c.jpg",
     "category": "Sandbox",
     "downloadLink": "https://www.minecraft.net/",
     "description": "Minecraft is a sandbox adventure game about placing blocks, exploring, crafting, and surviving in infinite worlds.",
@@ -32,7 +32,7 @@
   {
     "id": "4",
     "title": "Genshin Impact",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "coverPhoto": "https://i.ibb.co.com/KpQP27zH/2cb569a26363c19577e7ea341ee28bb0.jpg",
     "category": "RPG",
     "downloadLink": "https://genshin.hoyoverse.com/",
     "description": "Genshin Impact is an open-world action RPG where players explore the magical world of Teyvat and harness elemental powers.",
@@ -42,7 +42,7 @@
   {
     "id": "5",
     "title": "Among Us",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "coverPhoto": "https://i.ibb.co.com/GNzxqnC/dc1ef99e886527f92c70531016cd7f56.jpg",
     "category": "Party",
     "downloadLink": "https://innersloth.com/gameAmongUs.php",
     "description": "Among Us is a multiplayer party game where players work together on a spaceship—unless one of them is an impostor!",
@@ -52,7 +52,7 @@
   {
     "id": "6",
     "title": "Apex Legends",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "coverPhoto": "https://i.ibb.co.com/tMDQKys5/1e2d909ff8efaf04fe818b984be81d7f.jpg",
     "category": "Battle Royale",
     "downloadLink": "https://www.ea.com/games/apex-legends",
     "description": "Apex Legends is a hero shooter where legendary characters with unique abilities team up and battle for glory and fame.",
@@ -62,7 +62,7 @@
   {
     "id": "7",
     "title": "Hollow Knight",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "coverPhoto": "https://i.ibb.co.com/sppcj7P7/Hollow-Knight-first-cover-art-webp.png",
     "category": "Adventure",
     "downloadLink": "https://www.hollowknight.com/",
     "description": "Hollow Knight is a beautifully hand-drawn action adventure through a vast world of insects and heroes.",
@@ -72,31 +72,11 @@
   {
     "id": "8",
     "title": "The Witcher 3: Wild Hunt",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
+    "coverPhoto": "https://i.ibb.co.com/SwmSkpsF/4ee0c075b1c33fccc9c2b64e5771c29b.jpg",
     "category": "RPG",
     "downloadLink": "https://thewitcher.com/en/witcher3",
     "description": "An open-world RPG following monster hunter Geralt of Rivia on his quest across war-torn lands to find his adopted daughter.",
     "ratings": "4.9",
     "developer": "CD Projekt Red"
-  },
-  {
-    "id": "9",
-    "title": "Stardew Valley",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
-    "category": "Simulation",
-    "downloadLink": "https://www.stardewvalley.net/",
-    "description": "Stardew Valley lets you build the farm of your dreams—grow crops, raise animals, and become part of the community.",
-    "ratings": "4.8",
-    "developer": "ConcernedApe"
-  },
-  {
-    "id": "10",
-    "title": "Fortnite",
-    "coverPhoto": "https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg",
-    "category": "Battle Royale",
-    "downloadLink": "https://www.epicgames.com/fortnite/",
-    "description": "Fortnite is an ever-evolving battle royale where you build, fight, and outlast 99 others in creative chaos.",
-    "ratings": "4.5",
-    "developer": "Epic Games"
   }
 ]

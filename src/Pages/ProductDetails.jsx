@@ -19,12 +19,15 @@ const ProductDetails = () => {
 
   return (
 
-    
-  <div className='w-11/12 m-auto'>
-    <h1>Games Details</h1>
-    <GameCartDetails game={game}></GameCartDetails>
+    <div className="w-11/12 mx-auto my-12">
+  <h1 className="text-3xl text-center sm:text-4xl font-extrabold text-cyan-400 drop-shadow-md mb-8">
+    Games Details
+  </h1>
 
-    </div>
+  <GameCartDetails game={game} />
+</div>
+
+  
   );
 };
 

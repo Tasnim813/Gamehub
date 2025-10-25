@@ -1,90 +1,98 @@
 // import React from 'react';
 
 // const GameCartDetails = ({game}) => {
-//     console.log(game)
-//     return (
-//        <div className="hero bg-base-200 shadow-sm min-h-screen">
-//   <div className="hero-content flex-col lg:flex-row">
-//     <img
-//       src={game.coverPhoto}
-//       className="max-w-sm rounded-lg shadow-2xl"
-//     />
+//   console.log(game)
+//   return (
 //     <div>
-//       <h1 className="text-5xl font-bold">{game.title}</h1>
-//       <p>category:{game.category}</p>
-//       <p className="py-6">
-//         {game.description}
-//       </p>
-//       <button className=" ">ratings:{game.ratings}</button>
-//       <p>developer :{game.developer}</p>
-//       <p>downloadLink: {game.downloadLink}</p>
+//       <div className=" flex bg-base-100  shadow-sm p-5 rounded-xl">
+//   <figure>
+//     <img className='h-[350px] w-[400px] rounded-xl'
+//       src={game.coverPhoto}
+//       alt="Shoes" />
+//   </figure>
+//   <div className="card-body">
+//     <p className="text-gray-300 text-sm">
+//           Category: <span className="text-pink-400 font-semibold">{game.category}</span>
+//         </p>
+//         <p className="text-gray-200 text-sm leading-snug">{game.description}</p>
+
+//         <div className="flex flex-wrap items-center gap-1 mt-1">
+//           <span className="px-2 py-1 bg-cyan-600 text-white rounded-full font-semibold shadow-sm text-xs">
+//             Ratings: {game.ratings}
+//           </span>
+//           <span className="px-2 py-1 bg-pink-500 text-white rounded-full font-semibold shadow-sm text-xs">
+//             Developer: {game.developer}
+//           </span>
+//         </div>
+
+//         <div className="card-actions justify-end mt-2">
+//           <a
+//             href={game.downloadLink}
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="btn bg-gradient-to-r from-cyan-500 to-pink-500 hover:opacity-90 text-white font-semibold shadow-md px-3 py-2 text-sm"
+//           >
+//             Download
+//           </a>
+//         </div>
 //     </div>
 //   </div>
 // </div>
-//     );
+   
+//   );
 // };
 
 // export default GameCartDetails;
 
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
 
-/**
- * GameHub - Game Details Page
- * Props:
- *   - game: { id, title, coverPhoto, category, description, ratings, developer, downloadLink }
- */
 const GameCartDetails = ({ game }) => {
-  if (!game) return <p className="text-center mt-20">Loading game...</p>;
+  if (!game) return <p className="text-center mt-20 text-white">Loading game...</p>;
 
   return (
-    <motion.div
-      className="min-h-screen bg-gray-900 text-white p-6 md:p-12"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="max-w-6xl mx-auto bg-gray-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
-        {/* Left: Cover Image */}
-        <div className="lg:w-1/2 h-80 lg:h-auto overflow-hidden relative">
-          <img
-            src={game.coverPhoto}
-            alt={game.title}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-          />
+    <div className="flex flex-col lg:flex-row bg-gray-900 rounded-2xl shadow-xl overflow-hidden max-w-6xl mx-auto p-5">
+      {/* Left: Cover Image */}
+      <figure className="lg:w-1/2 h-64 lg:h-auto overflow-hidden rounded-xl">
+        <img
+          className="h-[320px] w-[500px] object-cover rounded-l-2xl hover:scale-105 transition-transform duration-300"
+          src={game.coverPhoto}
+          alt={game.title}
+        />
+      </figure>
+
+      {/* Right: Game Info */}
+      <div className="lg:w-1/2 p-4 flex flex-col justify-between gap-2">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-cyan-400 drop-shadow-md">
+          {game.title}
+        </h2>
+
+        <p className="text-gray-300 text-xl">
+          Category: <span className="text-pink-400 font-semibold">{game.category}</span>
+        </p>
+
+        <p className="text-gray-200 text-xl leading-snug">{game.description}</p>
+
+        <div className="flex flex-wrap items-center gap-2 mt-1 ">
+          <span className="px-5 py-3 bg-cyan-500 text-white rounded-full font-semibold shadow-sm text-xs ">
+            Ratings: {game.ratings}
+          </span>
+          <span className="px-5 py-3 bg-pink-500 text-white rounded-full font-semibold shadow-sm text-xs">
+            Developer: {game.developer}
+          </span>
         </div>
 
-        {/* Right: Game Info */}
-        <div className="lg:w-1/2 p-8 flex flex-col justify-between space-y-6">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2">
-              {game.title}
-            </h1>
-            <p className="text-gray-300 mb-2 font-semibold">
-              Category: <span className="text-white">{game.category}</span>
-            </p>
-            <p className="text-gray-200">{game.description}</p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-4 mt-4">
-            <span className="px-4 py-2 bg-green-600 rounded-full font-semibold">
-              Ratings: {game.ratings}
-            </span>
-            <span className="px-4 py-2 bg-orange-500 rounded-full font-semibold">
-              Developer: {game.developer}
-            </span>
-            <a
-              href={game.downloadLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 rounded-lg font-bold transition-all duration-300"
-            >
-              Download
-            </a>
-          </div>
+        <div className="card-actions justify-end mt-2">
+          <a
+            href={game.downloadLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn bg-gradient-to-r from-cyan-500 to-pink-500 hover:opacity-90 text-white font-semibold shadow-md px-4 py-2 text-sm "
+          >
+            Download
+          </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ import page from '../assets/error-404.png'
 // import { Link } from 'react-router';
 const ErrorPage = () => {
     return (
-        <div className='flex flex-col min-h-screen'>
+        <div className='flex flex-col min-h-screen '>
             {/* <Navbar></Navbar> */}
             <div className='flex-1 '>
                <div className=' justify-center '>

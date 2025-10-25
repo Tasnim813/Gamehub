@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../Context/AuthContext";
-
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 
@@ -46,9 +45,9 @@ const Profile = () => {
 
         <Link
           to="/profile/update"
-          className="btn mt-6 bg-gradient-to-r from-cyan-500 to-pink-500 border-none hover:opacity-90 w-full text-white font-semibold shadow-md"
+          className="btn mt-6 bg-cyan-500 hover:bg-cyan-400 border-none w-full text-white font-semibold shadow-md transition-colors"
         >
-          Update Information
+         Edit Profile
         </Link>
       </motion.div>
 
@@ -62,3 +61,4 @@ const Profile = () => {
 };
 
 export default Profile;
+

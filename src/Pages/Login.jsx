@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
 import { auth } from '.././Firebase/Firebase';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router';
 
 const googleprovider = new GoogleAuthProvider();
 
@@ -14,7 +14,10 @@ const Login = () => {
     const [show, setShow] = useState(false);
     const { user, setUser } = useContext(AuthContext);
     const emailRef = useRef(null);
-
+const location=useLocation()
+const from=location.state || '/'
+const navigate=useNavigate()
+console.log(location)
     const handleSignIn = (e) => {
         e.preventDefault();
         const email = e.target.email?.value;
@@ -27,6 +30,7 @@ const Login = () => {
                }
                 setUser(result.user);
                 toast.success('Successfully login');
+                navigate(from)
             })
             .catch(error => {
                 toast.error(error.code);
@@ -39,6 +43,7 @@ const Login = () => {
         .then((result)=>{
             setUser(result.user);
             toast.success("Successfully Login");
+            navigate(from)
         })
         .catch(error=>{
             toast.error(error.message);
@@ -55,18 +60,22 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
+       
             <motion.div 
               initial={{ opacity: 0, y: 30 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.5 }}
-              className="card bg-gray-800 w-full max-w-sm shadow-2xl rounded-2xl"
+              className="card  w-full max-w-sm shadow-2xl "
             >
-                <div className="card-body">
+                
+                <div>
+             <h1 className='text-white text-4xl mb-5 font-bold text-center'>Login Now!!</h1>
+                    <div className="card-body rounded-2xl bg-gray-800">
                    
                         <form onSubmit={handleSignIn} className="space-y-4">
                             <div className="flex flex-col space-y-1">
                                 <label className="text-gray-300 font-semibold">Email</label>
-                                <input type="email" ref={emailRef} name='email' 
+                                <input type="email" ref={emailRef} required name='email' 
                                        className="input input-bordered w-full bg-gray-700 text-white border-gray-600 focus:border-cyan-400" 
                                        placeholder="Email" 
                                 />
@@ -74,7 +83,7 @@ const Login = () => {
 
                             <div className="relative flex flex-col space-y-1">
                                 <label className="text-gray-300 font-semibold">Password</label>
-                                <input type={show ? 'text' : 'password'} name='password'
+                                <input required type={show ? 'text' : 'password'} name='password'
                                        className="input input-bordered w-full bg-gray-700 text-white border-gray-600 focus:border-cyan-400" 
                                        placeholder="Password" 
                                 />
@@ -83,13 +92,21 @@ const Login = () => {
                                     {show ? <FaEye /> : <FaEyeSlash />}
                                 </span>
                             </div>
-
                             <div className="text-right">
+  <button
+    type="button"
+    onClick={() => navigate("/forget-password", { state: emailRef.current?.value || "" })}
+    className="text-sm text-cyan-400 hover:text-cyan-300 link"
+  >
+    Forgot password?
+  </button>
+</div>
+                            {/* <div className="text-right">
                                 <button type='button' onClick={handleForgetPassword} 
                                         className="text-sm text-cyan-400 hover:text-cyan-300 link">
                                     Forgot password?
                                 </button>
-                            </div>
+                            </div> */}
 
                             <button type='submit' 
                                     className="btn w-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold shadow-lg transition-all">
@@ -112,6 +129,7 @@ const Login = () => {
                             </button>
                         </form>
                
+                </div>
                 </div>
             </motion.div>
         </div>

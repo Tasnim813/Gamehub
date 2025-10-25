@@ -2,8 +2,7 @@ import { createBrowserRouter } from "react-router";
 
 import HomeLayout from "../Layout/HomeLayout";
 
-import About from "../Pages/About";
-import Game from "../Pages/Game";
+
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Banner from "../Pages/Banner";
@@ -12,12 +11,16 @@ import Profile from "../Pages/Profile";
 import ProfileUpdate from "../Pages/ProfileUpdate";
 import AboutDeveloper from "../Pages/AboutDeveloper";
 import UpcomingGames from "../Pages/UpcomingGames";
+import PrivateRout from "../PrivateRoute/PrivateRout";
+import ErrorPage from "../Pages/ErrorPage";
+import ForgetPassword from "../Pages/ForgetPassword";
 
 
 export const router=createBrowserRouter([
     {
         path:'/',
         Component:HomeLayout,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 index:true,
@@ -39,11 +42,16 @@ export const router=createBrowserRouter([
             },
             {
                 path:'/product/:id',
-                Component:ProductDetails,
+                element:<PrivateRout>
+                    <ProductDetails></ProductDetails>
+                </PrivateRout>,
                 loader:()=> fetch('/Games.json')
             },{
                 path:'/profile',
-                Component:Profile
+                element:<PrivateRout>
+                    <Profile></Profile>
+
+                </PrivateRout>
             },
             {
                 path:'/profile/update',
@@ -52,6 +60,9 @@ export const router=createBrowserRouter([
             {
                 path:'/about/developer',
                 Component:AboutDeveloper
+            },{
+                path:'/forget-password',
+                Component:ForgetPassword
             }
         ]
     }

@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
 const AboutDeveloper = () => {
   useEffect(() => {
     document.title = "About Developer | Gamehub";
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white p-6 md:p-12">
+    <div className="min-h-screen bg-gradient-to-b  from-[#0a0a0a] to-[#1a1a1a] text-white p-6 md:p-12">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -21,8 +22,8 @@ const AboutDeveloper = () => {
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Developer Photo */}
           <motion.img
-            src="https://via.placeholder.com/250"
-            alt="Developer"
+            src="https://i.ibb.co.com/cKV5qcs9/download.jpg"
+            
             className="w-60 h-60 rounded-full border-4 border-pink-500 shadow-lg"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
@@ -57,28 +58,39 @@ const AboutDeveloper = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <a
-            href="https://github.com/username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-cyan-400 hover:text-pink-400 transition text-2xl"
-          >
-            GitHub
+          <a href="https://https://github.com/Tasnim813" target="_blank"
+            rel="noopener noreferrer" className="flex items-center  gap-1">
+            <FaGithub className="text-cyan-400 hover:text-pink-400 transition text-xl"></FaGithub>
+            <div className="text-cyan-400 hover:text-pink-400 transition text-xl"
+            >
+
+              GitHub
+            </div>
+
           </a>
-          <a
-            href="https://linkedin.com/in/username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-cyan-400 hover:text-pink-400 transition text-2xl"
-          >
-            LinkedIn
+          <a href="https://www.linkedin.com/in/tasnim-jahan-034769380/" target="_blank"
+            rel="noopener noreferrer" className="flex items-center  gap-1">
+            <FaLinkedin className="text-cyan-400 hover:text-pink-400 transition text-xl"></FaLinkedin>
+            <div className="text-cyan-400 hover:text-pink-400 transition text-xl"
+            >
+
+              GitHub
+            </div>
+
           </a>
-          <a
-            href="mailto:tasnim@example.com"
-            className="text-cyan-400 hover:text-pink-400 transition text-2xl"
-          >
-            Email
+          <a href="mailto:tasnim3j@gmail.com" target="_blank"
+            rel="noopener noreferrer" className="flex items-center  gap-1">
+          
+            <CgMail className="text-cyan-400 hover:text-pink-400 transition text-xl"></CgMail>
+            <div className="text-cyan-400 hover:text-pink-400 transition text-xl"
+            >
+
+              GitHub
+            </div>
+
           </a>
+         
+          
         </motion.div>
       </motion.div>
     </div>

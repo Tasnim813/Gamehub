@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+
 const Newsletter = ({ prefillEmail = "" }) => {
-    const [email, setEmail] = useState(prefillEmail);
+  const [email, setEmail] = useState(prefillEmail);
   const [status, setStatus] = useState("idle"); // idle | loading | success | error
   const [error, setError] = useState("");
 
-  const validateEmail = (value) => {
-    // simple regex for email validation (good enough for UI)
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
-  };
+  const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,16 +19,8 @@ const Newsletter = ({ prefillEmail = "" }) => {
 
     try {
       setStatus("loading");
-
-      // ======= Replace this block with real API call (Firebase/Netlify function/Mailchimp) =======
-      // Example:
-      // await fetch("/api/subscribe", { method: "POST", body: JSON.stringify({ email }) });
-
-      // Mocking network delay
       await new Promise((res) => setTimeout(res, 700));
-      // ==========================================================================================
 
-      // You can also save to localStorage as a simple mock:
       const saved = JSON.parse(localStorage.getItem("gamehub_subscribers") || "[]");
       if (!saved.includes(email)) {
         saved.push(email);
@@ -45,71 +35,58 @@ const Newsletter = ({ prefillEmail = "" }) => {
     } catch (err) {
       console.error(err);
       setStatus("error");
-      setError("ওপস! সাবস্ক্রাইব করতে সমস্যা হয়েছে। পরে চেষ্টা করুন।");
+      setError("Oops! There was an issue subscribing. Please try again later.");
     }
   };
 
-    return (
-     <section className="w-11/12 mx-auto my-16">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 text-cyan-300 drop-shadow-sm">
-        Join the <span className="text-white">GameHub</span> Newsletter
+  return (
+    <section className="w-11/12 mx-auto my-16">
+      {/* Title */}
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 text-cyan-700 drop-shadow-sm">
+        Join the <span className="text-gray-800">GameHub</span> Newsletter
       </h2>
 
+      {/* Newsletter Box */}
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.6 }}
-        className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-cyan-700/90 to-slate-900/80"
+        className="relative rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-cyan-50 to-white p-10 sm:p-14 border border-cyan-100"
       >
-        {/* Background decorative images (replace with your own game images) */}
-        <img
-          src="https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg"
-          alt="gaming-bg"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
-        />
-
-        <div className="relative z-10 px-6 py-10 md:py-14 lg:flex lg:items-center lg:justify-between lg:gap-10">
-          {/* Left: text + mini showcase */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          {/* Left Text */}
           <div className="max-w-xl text-center lg:text-left">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-              Get Early Access to Indie Releases 🎮
+            <h3 className="text-2xl sm:text-3xl font-bold text-cyan-800 mb-3">
+              Discover Indie Games Early 🎮
             </h3>
-            <p className="text-cyan-100/95 mb-6">
-              Subscribe to discover curated indie games, developer interviews, and exclusive GameHub events — straight to your inbox.
+            <p className="text-cyan-700/90 leading-relaxed">
+              Subscribe to get curated indie game updates, developer insights, and exclusive GameHub
+              events directly to your inbox.
             </p>
-
-            <div className="flex items-center justify-center lg:justify-start gap-3">
-              {/* small game thumbnails */}
-              <div className="flex -space-x-3">
-                <img className="w-12 h-12 rounded-md border-2 border-white/20" src="https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg" alt="thumb1" />
-                <img className="w-12 h-12 rounded-md border-2 border-white/20" src="https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg" alt="thumb2" />
-                <img className="w-12 h-12 rounded-md border-2 border-white/20" src="https://i.ibb.co.com/kgWq1cpS/5d356e494809537e071e93cbb94d1977.jpg" alt="thumb3" />
-              </div>
-              <span className="text-cyan-100 text-sm">Curated picks from indie devs</span>
-            </div>
           </div>
 
-          {/* Right: form */}
-          <div className="mt-8 lg:mt-0 w-full max-w-md mx-auto">
-            <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/5 shadow-inner">
-              <label htmlFor="email" className="sr-only">Email</label>
-              <div className="flex gap-3">
+          {/* Right Form */}
+          <div className="w-full max-w-md">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-cyan-100 shadow-md"
+            >
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
-                  id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@domain.com"
-                  className="flex-1 px-4 py-3 rounded-lg focus:outline-none text-slate-900"
+                  className="flex-1 px-4 py-3 rounded-lg focus:outline-none text-gray-800 border border-cyan-200 focus:ring-2 focus:ring-cyan-400 transition"
                   aria-invalid={!!error}
                   required
                 />
                 <button
                   type="submit"
-                  className={`px-5 py-3 rounded-lg font-semibold transition ${
+                  className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                     status === "loading"
-                      ? "bg-cyan-400/70 cursor-wait"
+                      ? "bg-cyan-300 cursor-wait"
                       : "bg-cyan-500 hover:bg-cyan-400"
                   } text-white`}
                 >
@@ -117,14 +94,16 @@ const Newsletter = ({ prefillEmail = "" }) => {
                 </button>
               </div>
 
-              {/* status / error */}
-              <div className="mt-3 min-h-[1.25rem]">
-                {error && <p className="text-sm text-rose-300">{error}</p>}
-                {status === "success" && <p className="text-sm text-green-300">Thanks! You're subscribed ✅</p>}
+              {/* Messages */}
+              <div className="mt-3 min-h-[1.25rem] text-center sm:text-left">
+                {error && <p className="text-sm text-rose-500">{error}</p>}
+                {status === "success" && (
+                  <p className="text-sm text-green-600">Thanks! You're subscribed ✅</p>
+                )}
               </div>
 
-              {/* small note */}
-              <p className="mt-4 text-xs text-cyan-100/80">
+              {/* Note */}
+              <p className="mt-4 text-xs text-cyan-700/80 text-center sm:text-left">
                 We respect your inbox. Unsubscribe anytime.
               </p>
             </form>
@@ -132,7 +111,125 @@ const Newsletter = ({ prefillEmail = "" }) => {
         </div>
       </motion.div>
     </section>
-    );
+  );
 };
 
 export default Newsletter;
+
+
+// import React, { useState } from "react";
+// import { motion } from "framer-motion";
+
+// const Newsletter = ({ prefillEmail = "" }) => {
+//   const [email, setEmail] = useState(prefillEmail);
+//   const [status, setStatus] = useState("idle"); // idle | loading | success | error
+//   const [error, setError] = useState("");
+
+//   const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setError("");
+
+//     if (!validateEmail(email)) {
+//       setError("সঠিক ইমেইল দিন (example@mail.com)");
+//       return;
+//     }
+
+//     try {
+//       setStatus("loading");
+
+//       // Mock delay / API placeholder
+//       await new Promise((res) => setTimeout(res, 700));
+
+//       const saved = JSON.parse(localStorage.getItem("gamehub_subscribers") || "[]");
+//       if (!saved.includes(email)) {
+//         saved.push(email);
+//         localStorage.setItem("gamehub_subscribers", JSON.stringify(saved));
+//       }
+
+//       setStatus("success");
+//       setTimeout(() => {
+//         setStatus("idle");
+//         setEmail("");
+//       }, 1500);
+//     } catch (err) {
+//       console.error(err);
+//       setStatus("error");
+//       setError("Oops! There was an issue subscribing. Please try again later.");
+//     }
+//   };
+
+//   return (
+//     <section className="w-11/12 mx-auto my-16">
+//       {/* Title */}
+//       <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 text-cyan-300 drop-shadow-sm">
+//         Join the <span className="text-gray-300">GameHub</span> Newsletter
+//       </h2>
+
+//       {/* Newsletter Box */}
+//       <motion.div
+//         initial={{ opacity: 0, y: 18 }}
+//         whileInView={{ opacity: 1, y: 0 }}
+//         viewport={{ once: true, amount: 0.25 }}
+//         transition={{ duration: 0.6 }}
+//         className="relative rounded-2xl overflow-hidden shadow-lg bg-gray-800/90 p-14"
+//       >
+//         <div className="lg:flex lg:items-center lg:justify-between lg:gap-10 min-h-[320px]">
+//           {/* Left: Text */}
+//           <div className="max-w-xl text-center lg:text-left mb-6 lg:mb-0">
+//             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+//               Discover Indie Games Early 🎮
+//             </h3>
+//             <p className="text-cyan-100/90">
+//               Subscribe to get curated indie game updates, developer insights, and exclusive GameHub events directly to your inbox.
+//             </p>
+//           </div>
+
+//           {/* Right: Form */}
+//           <div className="w-full max-w-md mx-auto">
+//             <form
+//               onSubmit={handleSubmit}
+//               className="bg-gray-900/70 backdrop-blur-sm p-6 rounded-xl border border-gray-700 shadow-inner"
+//             >
+//               <div className="flex gap-3">
+//                 <input
+//                   type="email"
+//                   value={email}
+//                   onChange={(e) => setEmail(e.target.value)}
+//                   placeholder="you@domain.com"
+//                   className="flex-1 px-4 py-4 rounded-lg focus:outline-none text-slate-900 bg-white"
+//                   aria-invalid={!!error}
+//                   required
+//                 />
+//                 <button
+//                   type="submit"
+//                   className={`px-5 py-4 rounded-lg font-semibold transition ${
+//                     status === "loading"
+//                       ? "bg-cyan-400/70 cursor-wait"
+//                       : "bg-cyan-500 hover:bg-cyan-400"
+//                   } text-white`}
+//                 >
+//                   {status === "loading" ? "Please wait..." : "Subscribe"}
+//                 </button>
+//               </div>
+
+//               {/* Error / Success Messages */}
+//               <div className="mt-3 min-h-[1.25rem]">
+//                 {error && <p className="text-sm text-rose-300">{error}</p>}
+//                 {status === "success" && <p className="text-sm text-green-300">Thanks! You're subscribed ✅</p>}
+//               </div>
+
+//               {/* Note */}
+//               <p className="mt-4 text-xs text-cyan-100/80 text-center lg:text-left">
+//                 We respect your inbox. Unsubscribe anytime.
+//               </p>
+//             </form>
+//           </div>
+//         </div>
+//       </motion.div>
+//     </section>
+//   );
+// };
+
+// export default Newsletter;
