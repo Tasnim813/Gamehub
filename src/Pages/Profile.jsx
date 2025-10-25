@@ -1,15 +1,31 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
 
   // Dynamic page title
   useEffect(() => {
     document.title = "My Profile | Gamehub";
+
+    // Simulate loading delay (for demonstration)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // 1 second delay
+
+    return () => clearTimeout(timer);
   }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-500 border-solid"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-white flex flex-col items-center justify-center p-6">
@@ -47,7 +63,7 @@ const Profile = () => {
           to="/profile/update"
           className="btn mt-6 bg-cyan-500 hover:bg-cyan-400 border-none w-full text-white font-semibold shadow-md transition-colors"
         >
-         Edit Profile
+          Update
         </Link>
       </motion.div>
 
@@ -61,4 +77,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
