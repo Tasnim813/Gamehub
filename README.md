@@ -1,16 +1,73 @@
-# React + Vite
+🎮 GameHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and interactive gaming platform where users can explore games, view details, and enjoy a smooth UI experience. Built with Vite + JavaScript, fully responsive and fast.
 
-Currently, two official plugins are available:
+🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 https://assighnment-nine.netlify.app/
 
-## React Compiler
+✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🎯 Clean and modern UI
 
-## Expanding the ESLint configuration
+🕹️ Game listing with details
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+⚡ Fast performance using Vite
+
+📱 Fully responsive design
+
+🔍 Search & filter system (if added)
+
+⭐ Add to favorites (optional feature)
+
+🛠️ Tech Stack
+Technology	Purpose
+Vite	Fast bundler
+JavaScript	Functionality
+HTML & CSS	Structure + Styling
+ESLint	Code linting
+📂 Project Structure
+Gamehub/
+│── public/
+│── src/
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   └── main.js
+│── index.html
+│── package.json
+│── vite.config.js
+│── README.md
+
+⚙️ Installation & Setup
+
+প্রজেক্ট লোকালি রান করতে নিচের ধাপগুলো অনুসরণ করো:
+
+1️⃣ Clone the repository
+git clone https://github.com/Tasnim813/Gamehub.git
+
+2️⃣ Go to project folder
+cd Gamehub
+
+3️⃣ Install dependencies
+npm install
+
+4️⃣ Start development server
+npm run dev
+
+📦 Build for Production
+npm run build
+
+🖼️ Screenshots (Optional)
+
+এখানে প্রয়োজন হলে UI স্ক্রিনশট যুক্ত করতে পারো:
+
+![Home Page Screenshot](./images/home.png)
+
+🤝 Contributing
+
+PRs are welcome. যদি নতুন ফিচার অ্যাড করতে চাও, Issue খুলে জানিয়ে দাও।
+
+📝 License
+
+This project is open-source and available under the MIT License.
