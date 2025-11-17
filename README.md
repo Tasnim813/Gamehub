@@ -39,35 +39,3 @@ Gamehub/
 │── vite.config.js
 │── README.md
 
-⚙️ Installation & Setup
-
-প্রজেক্ট লোকালি রান করতে নিচের ধাপগুলো অনুসরণ করো:
-
-1️⃣ Clone the repository
-git clone https://github.com/Tasnim813/Gamehub.git
-
-2️⃣ Go to project folder
-cd Gamehub
-
-3️⃣ Install dependencies
-npm install
-
-4️⃣ Start development server
-npm run dev
-
-📦 Build for Production
-npm run build
-
-🖼️ Screenshots (Optional)
-
-এখানে প্রয়োজন হলে UI স্ক্রিনশট যুক্ত করতে পারো:
-
-![Home Page Screenshot](./images/home.png)
-
-🤝 Contributing
-
-PRs are welcome. যদি নতুন ফিচার অ্যাড করতে চাও, Issue খুলে জানিয়ে দাও।
-
-📝 License
-
-This project is open-source and available under the MIT License.
