@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "title": "Nebula Knights",
+    "rating": 4.9,
+    "info": "1248 reviews",
+    "image": "https://i.ibb.co/DfnxBnf0/b17e6e3531e14b23b130490afdf6b26d.webp",
+    "route": "/games/nebula-knights"
+  },
+  {
+    "id": 2,
+    "title": "Skyborne Racers",
+    "rating": 4.8,
+    "info": "987 reviews",
+    "image": "https://i.ibb.co/ZR3KPV4C/d6dd2e4b57337f2b54833b70a17cd8dec1320450e3cb1a291548ed04bad00a98-SX1080-FMjpg.jpg",
+    "route": "/games/skyborne-racers"
+  },
+  {
+    "id": 3,
+    "title": "Mystic Puzzles",
+    "rating": 4.7,
+    "info": "2034 reviews",
+    "image": "https://i.ibb.co/ZRx6qdZF/unnamed.webp",
+    "route": "/games/mystic-puzzles"
+  },
+  {
+    "id": 4,
+    "title": "Galaxy Quest",
+    "rating": 4.6,
+    "info": "1100 reviews",
+    "image": "https://placehold.co/400x240?text=Galaxy+Quest",
+    "route": "/games/galaxy-quest"
+  },
+  {
+    "id": 5,
+    "title": "Racing Thunder",
+    "rating": 4.5,
+    "info": "890 reviews",
+    "image": "https://placehold.co/400x240?text=Racing+Thunder",
+    "route": "/games/racing-thunder"
+  },
+  {
+    "id": 6,
+    "title": "Shadow Realms",
+    "rating": 4.8,
+    "info": "1200 reviews",
+    "image": "https://placehold.co/400x240?text=Shadow+Realms",
+    "route": "/games/shadow-realms"
+  },
+  {
+    "id": 7,
+    "title": "Cyber Runner",
+    "rating": 4.7,
+    "info": "950 reviews",
+    "image": "https://placehold.co/400x240?text=Cyber+Runner",
+    "route": "/games/cyber-runner"
+  },
+  {
+    "id": 8,
+    "title": "Mystic Forest",
+    "rating": 4.6,
+    "info": "1020 reviews",
+    "image": "https://placehold.co/400x240?text=Mystic+Forest",
+    "route": "/games/mystic-forest"
+  },
+  {
+    "id": 9,
+    "title": "Alien Invasion",
+    "rating": 4.5,
+    "info": "875 reviews",
+    "image": "https://placehold.co/400x240?text=Alien+Invasion",
+    "route": "/games/alien-invasion"
+  },
+  {
+    "id": 10,
+    "title": "Dragon Slayer",
+    "rating": 4.9,
+    "info": "1400 reviews",
+    "image": "https://placehold.co/400x240?text=Dragon+Slayer",
+    "route": "/games/dragon-slayer"
+  },
+  {
+    "id": 11,
+    "title": "Starship Odyssey",
+    "rating": 4.8,
+    "info": "1130 reviews",
+    "image": "https://placehold.co/400x240?text=Starship+Odyssey",
+    "route": "/games/starship-odyssey"
+  },
+  {
+    "id": 12,
+    "title": "Puzzle Kingdom",
+    "rating": 4.7,
+    "info": "980 reviews",
+    "image": "https://placehold.co/400x240?text=Puzzle+Kingdom",
+    "route": "/games/puzzle-kingdom"
+  },
+  {
+    "id": 13,
+    "title": "Rogue Legends",
+    "rating": 4.6,
+    "info": "910 reviews",
+    "image": "https://placehold.co/400x240?text=Rogue+Legends",
+    "route": "/games/rogue-legends"
+  }
+]

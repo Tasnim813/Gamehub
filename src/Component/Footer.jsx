@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaFacebookF } from "react-icons/fa";
-import { CiTwitter } from "react-icons/ci";
-import { FaInstagramSquare } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -22,10 +20,30 @@ const Footer = () => {
             Bringing indie games and players together with urban gaming vibes.
           </p>
           <div className="flex gap-3 mt-2">
-            <span className="px-3 py-1 bg-cyan-700 hover:bg-cyan-500 text-white rounded-full cursor-pointer text-sm transition-colors"><FaFacebookF /></span>
-            <span className="px-3 py-1 bg-pink-700 hover:bg-pink-500 text-white rounded-full cursor-pointer text-sm transition-colors"><CiTwitter /></span>
-            <span className="px-3 py-1 bg-cyan-700 hover:bg-cyan-500 text-white rounded-full cursor-pointer text-sm transition-colors"><FaInstagramSquare />
-</span>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1 bg-cyan-700 hover:bg-cyan-500 text-white rounded-full cursor-pointer text-sm transition-colors"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://github.com/Tasnim813"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1 bg-gray-700 hover:bg-gray-500 text-white rounded-full cursor-pointer text-sm transition-colors"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1 bg-blue-700 hover:bg-blue-500 text-white rounded-full cursor-pointer text-sm transition-colors"
+            >
+              <FaLinkedin />
+            </a>
           </div>
         </div>
 
@@ -69,7 +87,10 @@ const Footer = () => {
       <div className="text-center py-4 text-gray-400 text-sm flex flex-col md:flex-row justify-center items-center gap-2">
         <p>
           &copy; 2025{" "}
-          <span className="text-cyan-300 font-semibold">Game<span className="text-pink-400">Hub</span></span> - All rights reserved
+          <span className="text-cyan-300 font-semibold">
+            Game<span className="text-pink-400">Hub</span>
+          </span>{" "}
+          - All rights reserved
         </p>
         <p className="text-pink-400 text-xs md:text-sm">Designed with Urban Gaming Vibe</p>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const Newsletter = ({ prefillEmail = "" }) => {
   const [email, setEmail] = useState(prefillEmail);
@@ -11,6 +12,7 @@ const Newsletter = ({ prefillEmail = "" }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+   toast.success('Successfully Submitted')
 
     if (!validateEmail(email)) {
       setError("সঠিক ইমেইল দিন (example@mail.com)");

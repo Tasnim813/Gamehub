@@ -12,7 +12,7 @@ const Carousel = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden shadow-2xl">
+    <div className="relative w-full h-[400px] object-contain overflow-hidden shadow-2xl">
       {slides?.map((slide, index) => (
         <div
           key={slide.id}

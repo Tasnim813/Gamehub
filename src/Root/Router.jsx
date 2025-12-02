@@ -14,6 +14,7 @@ import UpcomingGames from "../Pages/UpcomingGames";
 import PrivateRout from "../PrivateRoute/PrivateRout";
 import ErrorPage from "../Pages/ErrorPage";
 import ForgetPassword from "../Pages/ForgetPassword";
+import TopRatedGamesSection from "../Pages/TopRatedGamesSection.jsx";
 
 
 export const router=createBrowserRouter([
@@ -42,9 +43,10 @@ export const router=createBrowserRouter([
             },
             {
                 path:'/product/:id',
-                element:<PrivateRout>
-                    <ProductDetails></ProductDetails>
-                </PrivateRout>,
+                // element:<PrivateRout>
+                //     <ProductDetails></ProductDetails>
+                // </PrivateRout>,
+                Component:ProductDetails,
                 loader:()=> fetch('/Games.json')
             },{
                 path:'/profile',
@@ -63,7 +65,8 @@ export const router=createBrowserRouter([
             },{
                 path:'/forget-password',
                 Component:ForgetPassword
-            }
+            },
+            
         ]
     }
 ])

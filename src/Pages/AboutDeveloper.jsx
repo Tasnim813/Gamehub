@@ -58,7 +58,7 @@ const AboutDeveloper = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <a href="https://https://github.com/Tasnim813" target="_blank"
+          <a href="https://github.com/Tasnim813" target="_blank"
             rel="noopener noreferrer" className="flex items-center  gap-1">
             <FaGithub className="text-cyan-400 hover:text-pink-400 transition text-xl"></FaGithub>
             <div className="text-cyan-400 hover:text-pink-400 transition text-xl"
@@ -74,7 +74,7 @@ const AboutDeveloper = () => {
             <div className="text-cyan-400 hover:text-pink-400 transition text-xl"
             >
 
-              GitHub
+              Linkedin
             </div>
 
           </a>
@@ -85,7 +85,7 @@ const AboutDeveloper = () => {
             <div className="text-cyan-400 hover:text-pink-400 transition text-xl"
             >
 
-              GitHub
+              Email
             </div>
 
           </a>

@@ -30,6 +30,7 @@ const Navbar = () => {
       >
         Home
       </NavLink>
+      
 
       <NavLink
         to="/upcoming"
@@ -126,12 +127,7 @@ const Navbar = () => {
               <h1 className="text-lg font-bold text-cyan-300">
                 {user?.displayName || user?.email}
               </h1>
-              <Link
-                to="/profile"
-                className="btn bg-gradient-to-r from-cyan-400 to-pink-400 hover:opacity-90 text-white font-semibold border-none w-full shadow-md"
-              >
-                My Profile
-              </Link>
+              
               <button
                 onClick={handleSignOut}
                 className="btn bg-gradient-to-r from-red-500 to-orange-400 hover:opacity-90 text-white font-semibold border-none w-full shadow-md"
