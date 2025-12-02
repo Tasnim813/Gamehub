@@ -6,7 +6,7 @@ A modern and interactive **gaming platform** where users can explore games, view
 
 ## 🚀 Live Demo
 
-👉https://assighnment-nine.netlify.app/
+👉https://gamehub-game.netlify.app/
 
 ---
 
